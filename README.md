@@ -1,43 +1,49 @@
 # Image-generator-OpenAi
 
-Ce projet vous permet de générer des images à partir de descriptions textuelles en utilisant l'API OpenAI (modèle DALL·E). Vous pouvez facilement intégrer cette fonctionnalité à une application Symfony.
+This project allows you to generate images from text descriptions using the OpenAI API (DALL·E model). You can easily integrate this feature into a Symfony application.
 
-## Prérequis
+## Prerequisites
 
-Avant de commencer, vous devez avoir les éléments suivants installés sur votre machine :
+Before getting started, make sure you have the following installed on your machine:
 
 - [PHP](https://www.php.net/) >= 8.0
 - [Composer](https://getcomposer.org/)
-- Symfony CLI (optionnel mais recommandé) : [Installer Symfony](https://symfony.com/download)
+- Symfony CLI (optional but recommended): [Install Symfony](https://symfony.com/download)
 
 ## Installation
 
-### 1. Clonez le projet
+### 1. Clone the project
 
-Clonez ce repository sur votre machine locale :
+Clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/rooneyi/Image-generator-OpenAi.git
 cd Image-generator-OpenAi
 cp .env .env.local
 ```
+
 # .env.local
 OPENAI_API_KEY=your_openai_api_key_here
 
 ```bash
 composer install
 ```
-# Exemple de configuration dans le fichier config/services.yaml :
-## yaml
 
+## config/services.yaml
+```bash
 services:
     OpenAI\Client:
         factory: ["OpenAI", "client"]
         arguments:
             - "%env(OPENAI_API_KEY)%"
+```
+## Execute the server developpment
+
 ```bash
 php bin/console cache:clear
 symfony server:start
 ```
-# Acceder A l'application en local au port 
-## http://127.0.0.1:8000
+## open App in the browsers on 
+```bash
+http://127.0.0.1:8000
+```
