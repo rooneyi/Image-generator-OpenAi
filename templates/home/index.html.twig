@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Yotube generate Image{% endblock %}
+
+{% block body %}
+<div id="image-generator">
+{{form(form)}}
+</div>
+<div id="indicator" class="htmx-indicator">
+<progress />
+</div>
+{% endblock %}
